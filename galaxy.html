@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Galaxy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="stars">
+  <div class="star star1"></div>
+  <div class="star star2"></div>
+  <div class="star star3"></div>
+  <div class="star star4"></div>
+  <div class="star star5"></div>
+</div>
+
+  <div class="container">
+    <h1>🌌 Your Galaxy Result</h1>
+    <div id="result"></div>
+    <button id="againBtn">🔁 Generate Another Galaxy</button>
+    <a href="index.html" style="color: white; display: inline-block; margin-top: 20px;">🔙 Go Back</a>
+  </div>
+
+  <script>
+    const galaxyNames = [
+      "Nebulon-7", "Crystal Spiral", "Mystic Nova", "Echo Nebula",
+      "Zenthara System", "Aurora Drift", "Stellar Haven", "Dreamlight Cluster",
+      "Velvet Void", "Harmony Galaxy"
+    ];
+
+    const galaxyDescriptions = [
+      "A calm and glowing galaxy where dreams float like stars.",
+      "Filled with music waves and gentle light particles.",
+      "Everything here moves in slow motion under soft purple skies.",
+      "This galaxy blooms with stardust trees and cosmic winds.",
+      "A peaceful place where energy flows like rivers of light.",
+      "Time slows down and stardust sparkles around you.",
+      "A soothing space full of harmony, balance, and serenity.",
+      "Galaxies hum lullabies here — perfect for daydreamers.",
+      "A place for creatives, dreamers, and lovers of peace.",
+      "This galaxy welcomes those with kind hearts and big imaginations."
+    ];
+
+   let color = localStorage.getItem("favColor");
+
+// Fix: If color is black, change to white for visibility
+if (color.toLowerCase() === "black" || color === "#000000") {
+  color = "white";
+}
+    const number = localStorage.getItem("favNumber");
+    const hobby = localStorage.getItem("favHobby");
+
+    const index = Math.floor(Math.random() * galaxyNames.length);
+    const galaxy = galaxyNames[index];
+    const description = galaxyDescriptions[index];
+
+    const resultDiv = document.getElementById("result");
+resultDiv.classList.add("fade-in");
+
+resultDiv.innerHTML = `<h2 style="color:${color};">${galaxy}</h2>
+     <p>${description}</p>
+      <p><strong>Fun Fact:</strong> This galaxy loves people who enjoy <span style="color:${color};">${hobby}</span> and believe in the magic of <strong>${number}</strong>.</p>
+    `;
+document.getElementById("againBtn").addEventListener("click", function () {
+  // Go back to the form page
+  window.location.href = "index.html";
+});
+  </script>
+</body>
+</html>

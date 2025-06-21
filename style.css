@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, #0d1b2a, #000);
+  color: #ffffff;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://i.imgur.com/5cG9wYp.png') repeat;
+  animation: twinkle 30s linear infinite;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+}
+
+button {
+  background: #4a90e2;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #357ABD;
+}
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: floatStar 15s linear infinite;
+}
+
+.star1 { top: 20%; left: 10%; animation-delay: 0s; }
+.star2 { top: 50%; left: 25%; animation-delay: 3s; }
+.star3 { top: 70%; left: 60%; animation-delay: 6s; }
+.star4 { top: 40%; left: 80%; animation-delay: 9s; }
+.star5 { top: 10%; left: 50%; animation-delay: 12s; }
+
+@keyframes floatStar {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+}
+#againBtn {
+  margin-top: 20px;
+  background-color: #7a5ccf;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+#againBtn:hover {
+  background-color: #5e45a0;
+}
