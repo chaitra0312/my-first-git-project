@@ -1,0 +1,22 @@
+Local Git Setup Commands (in VS Code Terminal):
+# 1. Initialize Git in your folder
+git init
+
+# 2. Add all files to staging (ready to be committed)
+git add .
+
+# 3. Commit the files with a message
+git commit -m "first commit"
+
+
+Connect to GitHub & Push Code
+# 4. Connect your local folder to your GitHub repo (replace the URL with your own)
+git remote add origin https://github.com/your-username/your-repo-name.git
+
+# 5. Push the code to GitHub (first time)
+git push -u origin master
+
+3 commands to update GitHub:
+git add .
+git commit -m "your new message"
+git push
